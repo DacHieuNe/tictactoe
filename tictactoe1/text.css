@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box; }
+
+.color-1 {
+  color: yellow; }
+
+.color-2 {
+  color: red; }
+
+body {
+  display: grid;
+  grid-template-rows: 100px 151px 60px 10px;
+  place-items: center;
+  height: 100vh;
+  background-color: gray; }
+  body .text {
+    color: #fff;
+    font-size: 20px; }
+  body .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    border-bottom: 1px solid #fff; }
+    body .container .hidden {
+      display: none;
+      content: "";
+      position: absolute;
+      z-index: 99;
+      inset: 0; }
+  body .row {
+    width: calc(100% / 3);
+    height: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(10, 10, 10, 0.4);
+    transition: all 0.2s; }
+    body .row:hover {
+      opacity: 0.4; }
+  body .text1 {
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff; }
+  body button {
+    display: none;
+    cursor: pointer;
+    padding: 10px 20px; }
+
+.border-1 {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff; }
+
+.border-2 {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff; }
+
+.border-3 {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff; }
+
+/*# sourceMappingURL=text.css.map */
