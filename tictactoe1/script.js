@@ -21,6 +21,8 @@ function resetGame() {
 	let list = document.querySelectorAll(".container .row");
 	for(let i of list) {
 		i.textContent = "";
+		i.classList.remove("color-1");
+		i.classList.remove("color-2");
 	}
 	let spanElement = document.querySelector(".text span");
 	spanElement.textContent = "X";
@@ -52,17 +54,21 @@ function checkRow(list, res, rowCurrent, colCurrent) {
 function checkDiagonal(list, res, rowCurrent, colCurrent) {
 	let check1 = 0;
 	let check2 = 0;
+	let col1 = colCurrent + 1;
+	let col2 = colCurrent - 1;
 	let n = list.length	- 1;
-	for(let i = rowCurrent - 1;i >= 0; i--) {
-		if(list[i][n - i].textContent == res) {
-			check1++;
-		}	
-	}
-	for(let i = rowCurrent + 1;i <= n; i++) {
-		if(list[i][n-i].textContent == res) {
-			check2++;
+		for(let i = rowCurrent - 1;i >= 0; i--) {
+			if(col1 >= 0 && col1 < 3 && list[i][col1].textContent == res) {
+				check1++;
+			}
+			col1++;	
 		}
-	}
+		for(let i = rowCurrent + 1;i <= n; i++) {
+			if(col2 >= 0 && col2< 3 && list[i][col2].textContent == res) {
+				check2++;
+			}
+			col2--;
+		}
 	return check1 == 2 || check2 == 2 || (check1 == check2 && check1 != 0);
 }
 function checkDiagonal1(list, res, rowCurrent, colCurrent) {
