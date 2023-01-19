@@ -75,19 +75,19 @@ function checkDiagonal1(list, res, rowCurrent, colCurrent) {
 	let check1 = 0;
 	let check2 = 0;
 	let n = list.length - 1;
-	let col1 = colCurrent + 1;
-	let col2 = colCurrent - 1;
+	let col1 = colCurrent - 1;
+	let col2 = colCurrent + 1;
 	for(let i = rowCurrent + 1;i <= n; i++) {
 		if(col2 >= 0 && col2 < 3 && list[i][col2].textContent == res) {
 			check1++;
 		}
-		col2--;
+		col2++;
 	}
 	for(let i = rowCurrent - 1;i >= 0; i--) {
 		if(col1 >= 0 && col1 < 3 && list[i][col1].textContent == res) {
 			check2++;
 		}
-		col1++;
+		col1--;
 	}
 	return check1 == 2 || check2 == 2 || (check1 == check2 && check1 != 0);
 }
